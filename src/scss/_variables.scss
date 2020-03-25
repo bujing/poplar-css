@@ -1,0 +1,34 @@
+// Text
+$font-sizes: () !default;
+$font-sizes: map-merge(
+  (
+    'xl': 20px,
+    'lg': 18px,
+    'md': 16px,
+    'sm': 14px,
+    'xs': 12px
+  ),
+  $font-sizes
+);
+
+$fs-min: 0 !default;
+$fs-max: 0 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    'primary': #283593,
+    'secondary': #757575,
+    'warning': #ff6f00,
+    'danger': #b71c1c,
+    'dark': #212121,
+    'gray': #bdbdbd
+  ),
+  $colors
+);
+
+$aligns: (
+  'center': center,
+  'left': left,
+  'right': right
+) !default;

@@ -1,0 +1,30 @@
+{
+  "name": "poplar-css",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bujing/poplar-css.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bujing/poplar-css/issues"
+  },
+  "homepage": "https://github.com/bujing/poplar-css#readme",
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "dart-sass": "^1.25.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "normalize.css": "^8.0.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "build": "node scripts/build"
+  }
+}

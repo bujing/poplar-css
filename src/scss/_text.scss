@@ -1,0 +1,29 @@
+// 规格尺寸
+@each $size, $value in $font-sizes {
+  .text-#{$size} {
+    font-size: $value;
+  }
+}
+
+// 字号大小
+@if $fs-max > $fs-min {
+  @for $i from $fs-min through $fs-max {
+    .fs-#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+}
+
+// 文本颜色
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: $value;
+  }
+}
+
+// 文本对齐
+@each $align, $value in $aligns {
+  .text-#{$align} {
+    text-align: $value;
+  }
+}
