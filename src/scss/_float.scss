@@ -1,0 +1,19 @@
+// 浮动
+.float {
+  &-left { float: left; }
+  &-right { float: right; }
+  &-none { float: none; }
+}
+
+// 清除浮动
+.clear {
+  &fix {
+    &::after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+  }
+
+  &-both { clear: both; }
+}
