@@ -27,8 +27,42 @@ $colors: map-merge(
   $colors
 );
 
-$aligns: (
+$text-aligns: (
   'center': center,
   'left': left,
   'right': right
+) !default;
+
+// Flex
+$flex-directions: (
+  'row': row,
+  'row-reverse': row-reverse,
+  'column': column,
+  'column-reverse': column-reverse
+) !default;
+
+$flex-main-contents: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly
+) !default;
+
+$flex-cross-contents: (
+  'stretch': stretch,
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around
+) !default;
+
+$flex-cross-aligns: (
+  'stretch': stretch,
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'baseline': baseline
 ) !default;

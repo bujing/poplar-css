@@ -22,7 +22,7 @@
 }
 
 // 文本对齐
-@each $align, $value in $aligns {
+@each $align, $value in $text-aligns {
   .text-#{$align} {
     text-align: $value;
   }
