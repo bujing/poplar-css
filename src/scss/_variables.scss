@@ -1,4 +1,4 @@
-// Text
+// 字号尺码
 $font-sizes: () !default;
 $font-sizes: map-merge(
   (
@@ -11,9 +11,11 @@ $font-sizes: map-merge(
   $font-sizes
 );
 
+// 字号大小
 $fs-min: 0 !default;
 $fs-max: 0 !default;
 
+// 颜色
 $colors: () !default;
 $colors: map-merge(
   (
@@ -27,13 +29,15 @@ $colors: map-merge(
   $colors
 );
 
+// 定义行内内容在其块级父元素中的水平对齐方式
 $text-aligns: (
   'center': center,
   'left': left,
-  'right': right
+  'right': right,
+  'justify': justify
 ) !default;
 
-// Flex
+// 定义元素在主轴上的布局方向（正方向或反方向）
 $flex-directions: (
   'row': row,
   'row-reverse': row-reverse,
@@ -41,28 +45,49 @@ $flex-directions: (
   'column-reverse': column-reverse
 ) !default;
 
-$flex-main-contents: (
-  'start': flex-start,
-  'end': flex-end,
+// 定义元素在主轴方向上的（元素之间及其周围的）空间分配
+$main-contents: (
   'center': center,
   'between': space-between,
   'around': space-around,
   'evenly': space-evenly
 ) !default;
-
-$flex-cross-contents: (
-  'stretch': stretch,
+$flex-main-contents: (
   'start': flex-start,
-  'end': flex-end,
+  'end': flex-end
+) !default;
+$flex-main-contents: map-merge(
+  $flex-main-contents,
+  $main-contents
+);
+
+// 定义元素在交叉轴方向上的（元素之间及其周围的）空间分配
+$cross-contents: (
+  'stretch': stretch,
   'center': center,
   'between': space-between,
   'around': space-around
 ) !default;
-
-$flex-cross-aligns: (
-  'stretch': stretch,
+$flex-cross-contents: (
   'start': flex-start,
-  'end': flex-end,
+  'end': flex-end
+) !default;
+$flex-cross-contents: map-merge(
+  $flex-cross-contents,
+  $cross-contents
+);
+
+// 定义元素在交叉轴方向上的对齐方式
+$cross-aligns: (
+  'stretch': stretch,
   'center': center,
   'baseline': baseline
 ) !default;
+$flex-cross-aligns: (
+  'start': flex-start,
+  'end': flex-end
+) !default;
+$flex-cross-aligns: map-merge(
+  $flex-cross-aligns,
+  $cross-aligns
+);

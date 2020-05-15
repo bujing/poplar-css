@@ -3,6 +3,11 @@
   display: flex;
 }
 
+// 行内块盒子
+.flex-inline {
+  display: inline-flex;
+}
+
 @each $direction, $value in $flex-directions {
   .flex-#{$direction} {
     @extend .flex;
@@ -10,12 +15,7 @@
   }
 }
 
-// 行内块盒子
-.flex-inline {
-  display: inline-flex;
-}
-
-// 指定元素在一行/列内的排列，是收缩或溢出，还是换行
+// 指定元素在主轴上的排布，是收缩或溢出，还是在交叉轴上延伸
 .flex-wrap {
   flex-wrap: wrap;
 

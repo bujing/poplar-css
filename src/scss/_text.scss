@@ -7,9 +7,9 @@
 
 // 字号大小
 @if $fs-max > $fs-min {
-  @for $i from $fs-min through $fs-max {
-    .fs-#{$i} {
-      font-size: #{$i}px;
+  @for $fs from $fs-min through $fs-max {
+    .fs-#{$fs} {
+      font-size: #{$fs}px;
     }
   }
 }
