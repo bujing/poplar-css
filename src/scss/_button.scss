@@ -1,0 +1,41 @@
+@use 'sass:map';
+
+@function color-yiq ($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  // yiq
+  // https://baike.baidu.com/item/%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/10834848
+  $y: $r * 0.299 + $g * 0.587 + $b * 0.114; // 灰度化 https://baike.baidu.com/item/%E7%81%B0%E5%BA%A6%E5%8C%96
+  // $i: $r * 0.596 - $g * 0.275 - $b * 0.321;
+  // $q: $r * 0.212 - $g * 0.523 + $b * 0.311;
+
+  @if ($y > 192) {
+    @return $dark;
+  }
+  @else {
+    @return $white;
+  }
+}
+
+@mixin btn ($background, $border) {
+  background-color: $background;
+  border: 1px solid $border;
+  color: color-yiq($background);
+  @extend %btn;
+}
+
+%btn {
+  border-radius: $btn-radius;
+  font-size: map.get($font-sizes, 'sm');
+  height: 32px;
+  line-height: 1;
+  padding: 3px 7px;
+}
+
+@each $color, $value in $colors {
+  .btn-#{$color} {
+    @include btn($value, $value);
+  }
+}

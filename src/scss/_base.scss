@@ -1,6 +1,68 @@
 @import '../node_modules/normalize.css';
 
-// 更适合中文的行高设置
-html {
-  line-height: 1.5;
+// 根元素、表单元素
+// 为避免重复代码，此处增加条件判断
+@if $line-height != 1.15 {
+  html,
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    line-height: $line-height;
+  }
+}
+
+// 标题
+@each $type, $value in $heading-margin {
+  #{$type} {
+    margin: $value;
+  }
+}
+
+// 超链接
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+// 段落
+p {
+  margin: $paragraph-margin;
+}
+
+// 列表
+ol,
+ul {
+  margin: $list-margin;
+  padding: $list-padding;
+}
+li {
+  list-style: $list-item-style;
+}
+
+// 描述列表
+dl {
+  margin: $description-margin;
+}
+dd {
+  margin: $description-details-margin;
+}
+
+// 表格
+table {
+  border-collapse: collapse;
+}
+th {
+  text-align: inherit;
+}
+
+// 多行文本
+textarea {
+  resize: vertical;
 }
