@@ -1,7 +1,8 @@
 // 浮动
-.float {
-  &-left { float: left; }
-  &-right { float: right; }
+@each $side, $value in $float-side {
+  .float-#{$side} {
+    float: $value;
+  }
 }
 
 // 清除浮动
@@ -14,5 +15,7 @@
     }
   }
 
-  &-both { clear: both; }
+  &-both {
+    clear: both;
+  }
 }

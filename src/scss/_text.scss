@@ -1,28 +1,21 @@
 // 规格尺寸
-@each $size, $value in $font-sizes {
+@each $size, $value in $text-size {
   .text-#{$size} {
     font-size: $value;
   }
 }
 
 // 字号大小
-@if $fs-max > $fs-min {
-  @for $fs from $fs-min through $fs-max {
-    .fs-#{$fs} {
-      font-size: #{$fs}px;
+@if $text-size-max > $text-size-min {
+  @for $size from $text-size-min through $text-size-max {
+    .fs-#{$size} {
+      font-size: #{$size}px;
     }
   }
 }
 
-// 文本颜色
-@each $color, $value in $colors {
-  .text-#{$color} {
-    color: $value;
-  }
-}
-
 // 文本对齐
-@each $align, $value in $text-aligns {
+@each $align, $value in $text-align {
   .text-#{$align} {
     text-align: $value;
   }

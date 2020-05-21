@@ -28,17 +28,10 @@ $list-item-style: none !default;
 $description-margin: 0 !default;
 $description-details-margin: 0 !default;
 
-$primary: #283593;
-$secondary: #757575;
-$warning: #ff6f00;
-$danger: #b71c1c;
-$dark: #212121;
-$gray: #bdbdbd;
-$white: #fff;
-
-// 字号尺码
-$font-sizes: () !default;
-$font-sizes: map-merge(
+// text
+// size
+$text-size: () !default;
+$text-size: map-merge(
   (
     'xl': 20px,
     'lg': 18px,
@@ -46,33 +39,23 @@ $font-sizes: map-merge(
     'sm': 14px,
     'xs': 12px
   ),
-  $font-sizes
+  $text-size
 );
-
-// 字号大小
-$fs-min: 0 !default;
-$fs-max: 0 !default;
-
-// 颜色
-$colors: () !default;
-$colors: map-merge(
-  (
-    'primary': $primary,
-    'secondary': $secondary,
-    'warning': $warning,
-    'danger': $danger,
-    'dark': $dark,
-    'gray': $gray
-  ),
-  $colors
-);
-
-// 定义行内内容在其块级父元素中的水平对齐方式
-$text-aligns: (
+$text-size-min: 0 !default;
+$text-size-max: 0 !default;
+// align
+$text-align: (
   'center': center,
   'left': left,
   'right': right,
   'justify': justify
+) !default;
+
+// float
+$float-side: (
+  'left': left,
+  'right': right,
+  'none': none
 ) !default;
 
 // 定义元素在主轴上的布局方向（正方向或反方向）

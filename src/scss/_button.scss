@@ -28,14 +28,14 @@
 
 %btn {
   border-radius: $btn-radius;
-  font-size: map.get($font-sizes, 'sm');
+  font-size: map.get($text-size, 'sm');
   height: 32px;
   line-height: 1;
   padding: 3px 7px;
 }
 
-@each $color, $value in $colors {
-  .btn-#{$color} {
-    @include btn($value, $value);
-  }
-}
+// @each $color, $value in $colors {
+//   .btn-#{$color} {
+//     @include btn($value, $value);
+//   }
+// }
