@@ -8,7 +8,8 @@
   display: inline-flex;
 }
 
-@each $direction, $value in $flex-directions {
+// 定义元素在主轴上的布局方向（正方向或反方向）
+@each $direction, $value in $flex-direction {
   .flex-#{$direction} {
     @extend .flex;
     flex-direction: $value;
@@ -24,30 +25,23 @@
   }
 }
 
-// 主轴元素分布
-@each $content, $value in $flex-main-contents {
+// 指定元素在主轴方向上的（元素之间及其周围的）空间分配
+@each $content, $value in $main-content {
   .main-content-#{$content} {
     justify-content: $value;
   }
 }
 
-// 交叉轴元素分布，对单行弹性盒子无效
-@each $content, $value in $flex-cross-contents {
+// 指定元素在交叉轴方向上的（元素之间及其周围的）空间分配，对单行弹性盒子无效
+@each $content, $value in $cross-content {
   .cross-content-#{$content} {
     align-content: $value;
   }
 }
 
-// 交叉轴元素对齐
-@each $align, $value in $flex-cross-aligns {
-  .cross-items-#{$align} {
+// 定义元素在交叉轴方向上的对齐方式
+@each $item, $value in $cross-items {
+  .cross-items-#{$item} {
     align-items: $value;
   }
-}
-
-// 盒子子元素空间适配
-.flex-item {
-  &-stretch { flex: 1 1 0%; }
-  &-auto { flex: 1 1 auto; }
-  &-none { flex: 0 0 auto; }
 }

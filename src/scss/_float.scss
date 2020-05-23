@@ -7,12 +7,10 @@
 
 // 清除浮动
 .clear {
-  &fix {
-    &::after {
-      clear: both;
-      content: '';
-      display: block;
-    }
+  &fix::after {
+    clear: both;
+    content: '';
+    display: block;
   }
 
   &-both {

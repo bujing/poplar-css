@@ -16,7 +16,9 @@
   content: "";
   display: block;
 }
-.clear-both { clear: both; } /* 适用场景[2] */
+.clear-both {
+  clear: both; /* 适用场景[2] */
+}
 ```
 
 ## 补充说明
@@ -26,7 +28,7 @@
 2. 清除浮动，固定高度或者以 `overflow: hidden` 为首的设置块格式化上下文，都是行之有效的解决方法。除此之外，还有适用于大多数场景的 `after` 伪元素，弊端是：`after` 伪元素被占用。之所以再加上一个 `clear-both`，只要是考虑到以下布局：
 
 ``` html
-<!-- 
+<!--
   在此布局中，div1 所做的一切清除浮动的努力，都无法消除浮动对 div2 的影响
   这件事只能 div2 自己做，使用 clear-both
 -->

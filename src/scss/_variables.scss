@@ -58,60 +58,39 @@ $float-side: (
   'none': none
 ) !default;
 
-// 定义元素在主轴上的布局方向（正方向或反方向）
-$flex-directions: (
+// flex
+// direction
+$flex-direction: (
   'row': row,
   'row-reverse': row-reverse,
   'column': column,
   'column-reverse': column-reverse
 ) !default;
-
-// 定义元素在主轴方向上的（元素之间及其周围的）空间分配
-$main-contents: (
-  'center': center,
+// justify-content
+$main-content: (
+  'stretch': stretch,
   'between': space-between,
   'around': space-around,
-  'evenly': space-evenly
-) !default;
-$flex-main-contents: (
+  'evenly': space-evenly,
   'start': flex-start,
-  'end': flex-end
+  'end': flex-end,
+  'center': center
 ) !default;
-$flex-main-contents: map-merge(
-  $flex-main-contents,
-  $main-contents
-);
-
-// 定义元素在交叉轴方向上的（元素之间及其周围的）空间分配
-$cross-contents: (
+// align-content
+$cross-content: (
   'stretch': stretch,
-  'center': center,
   'between': space-between,
-  'around': space-around
-) !default;
-$flex-cross-contents: (
+  'around': space-around,
+  'evenly': space-evenly,
   'start': flex-start,
-  'end': flex-end
+  'end': flex-end,
+  'center': center
 ) !default;
-$flex-cross-contents: map-merge(
-  $flex-cross-contents,
-  $cross-contents
-);
-
-// 定义元素在交叉轴方向上的对齐方式
-$cross-aligns: (
+// align-items
+$cross-items: (
   'stretch': stretch,
-  'center': center,
-  'baseline': baseline
-) !default;
-$flex-cross-aligns: (
+  'baseline': baseline,
   'start': flex-start,
-  'end': flex-end
+  'end': flex-end,
+  'center': center
 ) !default;
-$flex-cross-aligns: map-merge(
-  $flex-cross-aligns,
-  $cross-aligns
-);
-
-// Button
-$btn-radius: 4px;
