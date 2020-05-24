@@ -220,7 +220,7 @@ $cross-content: (
 
 指定元素在交叉轴方向上的对齐方式。
 
-```
+``` scss
 $cross-items: (
   'stretch': stretch,
   'baseline': baseline,
