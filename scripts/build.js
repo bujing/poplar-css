@@ -8,7 +8,8 @@ rimraf('./dist', () => {})
 
 const config = {
   entry: {
-    poplar: './src/poplar.scss'
+    'poplar': './src/poplar.scss',
+    'poplar-self': './src/poplar-self.scss'
   },
   mode: 'production',
   module: {
@@ -63,6 +64,7 @@ webpack(config).run((err, stats) => {
       console.log('success')
       // 删除 poplar.js
       rimraf('./dist/poplar.js', () => {})
+      rimraf('./dist/poplar-self.js', () => {})
     }
   }
 })

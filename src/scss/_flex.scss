@@ -1,14 +1,14 @@
 // 盒子布局
 .flex {
   display: flex;
+
+  // 行内块
+  &-inline {
+    display: inline-flex;
+  }
 }
 
-// 行内块盒子
-.flex-inline {
-  display: inline-flex;
-}
-
-// 定义元素在主轴上的布局方向（正方向或反方向）
+// 指定元素在主轴上的布局方向（正方向或反方向）
 @each $direction, $value in $flex-direction {
   .flex-#{$direction} {
     @extend .flex;
@@ -17,11 +17,9 @@
 }
 
 // 指定元素在主轴上的排布，是收缩或溢出，还是在交叉轴上延伸
-.flex-wrap {
-  flex-wrap: wrap;
-
-  &-reverse {
-    flex-wrap: wrap-reverse;
+@each $wrap, $value in $flex-wrap {
+  .flex-#{$wrap} {
+    flex-wrap: $value;
   }
 }
 
@@ -39,7 +37,7 @@
   }
 }
 
-// 定义元素在交叉轴方向上的对齐方式
+// 指定元素在交叉轴方向上的对齐方式
 @each $item, $value in $cross-items {
   .cross-items-#{$item} {
     align-items: $value;

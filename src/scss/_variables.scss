@@ -43,6 +43,8 @@ $text-size: map-merge(
 );
 $text-size-min: 0 !default;
 $text-size-max: 0 !default;
+// color
+$text-color: () !default;
 // align
 $text-align: (
   'center': center,
@@ -65,6 +67,12 @@ $flex-direction: (
   'row-reverse': row-reverse,
   'column': column,
   'column-reverse': column-reverse
+) !default;
+// wrap
+$flex-wrap: (
+  'nowrap': nowrap,
+  'wrap': wrap,
+  'wrap-reverse': wrap-reverse
 ) !default;
 // justify-content
 $main-content: (
