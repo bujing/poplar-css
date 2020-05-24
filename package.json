@@ -26,5 +26,6 @@
   },
   "scripts": {
     "build": "node scripts/build"
-  }
+  },
+  "main": "src/poplar.scss"
 }
