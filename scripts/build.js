@@ -45,7 +45,8 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `[name].${version}.css`
+      // filename: `[name].${version}.css`
+      filename: '[name].css'
     })
   ]
 }
