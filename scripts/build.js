@@ -47,7 +47,9 @@ const config = {
     new MiniCssExtractPlugin({
       // filename: `[name].${version}.css`
       filename: '[name].css'
-    })
+    }),
+
+    new webpack.BannerPlugin(`Poplar CSS v${version}`)
   ]
 }
 
