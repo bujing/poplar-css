@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@function color-yiq ($color) {
+@function color-contrasted ($color) {
   $r: red($color);
   $g: green($color);
   $b: blue($color);
@@ -11,30 +11,41 @@
   // $i: $r * 0.596 - $g * 0.275 - $b * 0.321;
   // $q: $r * 0.212 - $g * 0.523 + $b * 0.311;
 
-  @if ($y > 192) {
-    @return $dark;
+  @if ($y > $yiq-contrasted-threshold) {
+    @return $yiq-contrasted-dark;
   } @else {
-    @return $white;
+    @return $yiq-contrasted-light;
   }
 }
 
-@mixin btn ($background, $border) {
-  background-color: $background;
-  border: 1px solid $border;
-  color: color-yiq($background);
-  @extend %btn;
+@mixin button ($style) {
+  $background: map.get($style, 'background');
+  $border-width: map.get($style, 'border-width');
+  $border-style: map.get($style, 'border-style');
+  $border-color: map.get($style, 'border-color');
+  $border-radius: map.get($style, 'border-radius');
+  $color: map.get($style, 'color');
+  $font-size: map.get($style, 'font-size');
+  $font-weight: map.get($style, 'font-weight');
+
+  background-color: if($background, $background, transparent);
+  border-width: if($border-width, $border-width, 1px);
+  border-style: if($border-style, $border-style, solid);
+  border-color: if($border-color, $border-color, transparent);
+  @if ($border-radius) {
+    border-radius: $border-radius;
+  }
+  color: if($color, $color, color-contrasted($background));
+  @if ($font-size) {
+    font-size: $font-size;
+  }
+  @if ($font-weight) {
+    font-weight: $font-weight;
+  }
 }
 
-%btn {
-  border-radius: $button-border-radius;
-  font-size: map.get($text-size, 'sm');
-  height: 32px;
-  line-height: 1;
-  padding: 3px 7px;
+@each $name, $style in $button-style {
+  .button-#{$name} {
+    @include button($style);
+  }
 }
-
-// @each $color, $value in $colors {
-//   .btn-#{$color} {
-//     @include btn($value, $value);
-//   }
-// }

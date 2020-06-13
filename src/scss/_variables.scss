@@ -28,6 +28,14 @@ $list-item-style: none !default;
 $description-margin: 0 !default;
 $description-details-margin: 0 !default;
 
+// color
+$black: #000;
+$white: #fff;
+
+$yiq-contrasted-threshold: 192 !default;
+$yiq-contrasted-dark: $black !default;
+$yiq-contrasted-light: $white !default;
+
 // text
 // size
 $text-size: () !default;
@@ -45,35 +53,24 @@ $text-size-min: 0 !default;
 $text-size-max: 0 !default;
 // color
 $text-color: () !default;
+$text-color: map-merge(
+  (
+    'black': $black,
+    'white': $white
+  ),
+  $text-color
+);
 // align
-$text-align: (
-  'center': center,
-  'left': left,
-  'right': right,
-  'justify': justify
-) !default;
+$text-align: center, left, right, justify !default;
 
 // float
-$float-side: (
-  'left': left,
-  'right': right,
-  'none': none
-) !default;
+$float-side: left, right, none !default;
 
 // flex
 // direction
-$flex-direction: (
-  'row': row,
-  'row-reverse': row-reverse,
-  'column': column,
-  'column-reverse': column-reverse
-) !default;
+$flex-direction: row, row-reverse, column, column-reverse !default;
 // wrap
-$flex-wrap: (
-  'nowrap': nowrap,
-  'wrap': wrap,
-  'wrap-reverse': wrap-reverse
-) !default;
+$flex-wrap: nowrap, wrap, wrap-reverse !default;
 // justify-content
 $main-content: (
   'stretch': stretch,
@@ -102,3 +99,18 @@ $cross-items: (
   'end': flex-end,
   'center': center
 ) !default;
+
+// button
+$button-style: () !default;
+$button-style: map-merge(
+  (
+    'black': (
+      'background': $black,
+    ),
+    'white': (
+      'background': $white,
+      'border-color': $black
+    )
+  ),
+  $button-style
+);

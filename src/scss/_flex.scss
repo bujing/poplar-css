@@ -9,17 +9,17 @@
 }
 
 // 指定元素在主轴上的布局方向（正方向或反方向）
-@each $direction, $value in $flex-direction {
+@each $direction in $flex-direction {
   .flex-#{$direction} {
     @extend .flex;
-    flex-direction: $value;
+    flex-direction: $direction;
   }
 }
 
 // 指定元素在主轴上的排布，是收缩或溢出，还是在交叉轴上延伸
-@each $wrap, $value in $flex-wrap {
+@each $wrap in $flex-wrap {
   .flex-#{$wrap} {
-    flex-wrap: $value;
+    flex-wrap: $wrap;
   }
 }
 

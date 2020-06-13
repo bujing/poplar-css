@@ -1,7 +1,7 @@
 // 浮动
-@each $side, $value in $float-side {
+@each $side in $float-side {
   .float-#{$side} {
-    float: $value;
+    float: $side;
   }
 }
 

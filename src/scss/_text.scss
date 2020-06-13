@@ -22,8 +22,8 @@
 }
 
 // 文本对齐
-@each $align, $value in $text-align {
+@each $align in $text-align {
   .text-#{$align} {
-    text-align: $value;
+    text-align: $align;
   }
 }
