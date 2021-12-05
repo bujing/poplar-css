@@ -30,6 +30,7 @@ $description-details-margin: 0 !default;
 
 // color
 $black: #000;
+$gray: lighten(#000, 50%);
 $white: #fff;
 
 $yiq-contrasted-threshold: 192 !default;
@@ -49,13 +50,14 @@ $text-size: map-merge(
   ),
   $text-size
 );
-$text-size-min: 0 !default;
-$text-size-max: 0 !default;
+$font-size-min: 0 !default;
+$font-size-max: 0 !default;
 // color
 $text-color: () !default;
 $text-color: map-merge(
   (
     'black': $black,
+    'gray': $gray,
     'white': $white
   ),
   $text-color
@@ -105,12 +107,26 @@ $button-style: () !default;
 $button-style: map-merge(
   (
     'black': (
-      'background': $black,
+      'background-color': $black
+    ),
+    'gray': (
+      'background-color': $gray
     ),
     'white': (
-      'background': $white,
+      'background-color': $white,
       'border-color': $black
     )
   ),
   $button-style
+);
+
+// border v1.2.0
+$radius: () !default;
+$radius: map-merge(
+  (
+    'lg': 4px,
+    'md': 3px,
+    'sm': 2px
+  ),
+  $radius
 );

@@ -19,33 +19,28 @@
 }
 
 @mixin button ($style) {
-  $background: map.get($style, 'background');
-  $border-width: map.get($style, 'border-width');
-  $border-style: map.get($style, 'border-style');
-  $border-color: map.get($style, 'border-color');
-  $border-radius: map.get($style, 'border-radius');
-  $color: map.get($style, 'color');
-  $font-size: map.get($style, 'font-size');
-  $font-weight: map.get($style, 'font-weight');
+  $bgc: map.get($style, 'background-color');
+  $bgc: if($bgc, $bgc, transparent);
+  $bc: map.get($style, 'border-color');
+  $bc: if($bc, $bc, $bgc);
+  $c: map.get($style, 'color');
+  $c: if($c, $c, color-contrasted($bgc));
 
-  background-color: if($background, $background, transparent);
-  border-width: if($border-width, $border-width, 1px);
-  border-style: if($border-style, $border-style, solid);
-  border-color: if($border-color, $border-color, transparent);
-  @if ($border-radius) {
-    border-radius: $border-radius;
-  }
-  color: if($color, $color, color-contrasted($background));
-  @if ($font-size) {
-    font-size: $font-size;
-  }
-  @if ($font-weight) {
-    font-weight: $font-weight;
-  }
+  background-color: $bgc;
+  border: 1px solid $bc;
+  color: $c;
 }
 
+// 按钮
 @each $name, $style in $button-style {
   .button-#{$name} {
     @include button($style);
+  }
+}
+
+// 圆角边框
+@each $size, $value in $radius {
+  .radius-#{$size} {
+    border-radius: $value;
   }
 }

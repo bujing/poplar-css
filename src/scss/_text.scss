@@ -6,8 +6,8 @@
 }
 
 // 字号大小
-@if $text-size-max > $text-size-min {
-  @for $size from $text-size-min through $text-size-max {
+@if $font-size-max > $font-size-min {
+  @for $size from $font-size-min through $font-size-max {
     .fs-#{$size} {
       font-size: #{$size}px;
     }
