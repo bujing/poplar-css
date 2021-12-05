@@ -73,7 +73,7 @@ $text-color: (
 // other
 ```
 
-在 `$text-align` 集合中声明文本的对齐样式，包含 `center`、`left`、 `right` 和 `justify`，支持重写，但不支持扩展。
+在 `$text-align` 集合中声明文本的对齐样式，包含 `center`、`left`、`right` 和 `justify`，支持重写，但不支持扩展。
 
 ``` css
 .text-center { text-align: center; }
@@ -84,7 +84,7 @@ $text-color: (
 
 浮动和清除浮动，也是不能忽略的常用样式。
 
-在 `$float-side` 集合中声明浮动的对齐样式，包含 `left`、 `right` 和 `none`，支持重写，但不支持扩展。
+在 `$float-side` 集合中声明浮动的对齐样式，包含 `left`、`right` 和 `none`，支持重写，但不支持扩展。
 
 ``` css
 .float-left { float: left; }
@@ -115,14 +115,14 @@ $text-color: (
 .flex-inline { display: inline-flex; }
 ```
 
-指定元素在主轴上的布局方向（正方向或反方向），包含 `row`、 `row-reverse`、`column` 和 `column-reverse`，支持重写，但不支持扩展。
+指定元素在主轴上的布局方向（正方向或反方向），包含 `row`、`row-reverse`、`column` 和 `column-reverse`，支持重写，但不支持扩展。
 
 ``` css
 .flex-row { flex-direction: row; }
 /* other */
 ```
 
-指定元素在主轴上的排布，是收缩或溢出，还是在交叉轴上延伸，包含 `nowrap`、 `wrap` 和 `wrap-reverse`，支持重写，但不支持扩展。
+指定元素在主轴上的排布，是收缩或溢出，还是在交叉轴上延伸，包含 `nowrap`、`wrap` 和 `wrap-reverse`，支持重写，但不支持扩展。
 
 ``` css
 .flex-nowrap { flex-wrap: nowrap; }
