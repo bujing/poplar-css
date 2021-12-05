@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const rimraf = require('rimraf')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { version } = require('../package.json')
 
 rimraf('./dist', () => {})
@@ -15,17 +15,19 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-preset-env')()
-              ]
+              postcssOptions: {
+                ident: 'postcss',
+                plugins: [
+                  'postcss-preset-env'
+                ]
+              }
             }
           },
           {
@@ -40,7 +42,7 @@ const config = {
   },
   optimization: {
     minimizer: [
-      new OptimizeCSSAssetsPlugin({})
+      new CssMinimizerPlugin()
     ]
   },
   plugins: [
