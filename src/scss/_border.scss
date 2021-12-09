@@ -1,0 +1,6 @@
+// 圆角边框
+@each $size, $value in $radius {
+  .radius-#{$size} {
+    border-radius: $value;
+  }
+}

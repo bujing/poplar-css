@@ -211,6 +211,30 @@ $button-style: map-merge(
 // other
 ```
 
+支持在 `$button-size` 集合中声明按钮高度，支持扩展和重写。
+
+``` scss
+// 默认配置
+$button-size: () !default;
+$button-size: map-merge(
+  (
+    'lg': 36px,
+    'md': 32px,
+    'sm': 28px
+  ),
+  $button-size
+);
+// 指定集合
+$button-size: (
+  'xl': 44px,
+  'lg': 40px
+);
+// 输出
+.button-xl { height: 44px; } // 扩展
+.button-lg { height: 40px; } // 重写
+// other
+```
+
 ## Border
 
 增加边框圆角样式，可以配合按钮或者其他带边框的元素使用，支持扩展和重写。

@@ -31,16 +31,16 @@
   color: $c;
 }
 
-// 按钮
+// 按钮风格
 @each $name, $style in $button-style {
   .button-#{$name} {
     @include button($style);
   }
 }
 
-// 圆角边框
-@each $size, $value in $radius {
-  .radius-#{$size} {
-    border-radius: $value;
+// 按钮尺寸
+@each $size, $value in $button-size {
+  .button-#{$size} {
+    height: $value;
   }
 }

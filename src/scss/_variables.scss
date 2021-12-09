@@ -103,6 +103,17 @@ $cross-items: (
 ) !default;
 
 // button
+// size
+$button-size: () !default;
+$button-size: map-merge(
+  (
+    'lg': 36px,
+    'md': 32px,
+    'sm': 28px
+  ),
+  $button-size
+);
+// style
 $button-style: () !default;
 $button-style: map-merge(
   (
